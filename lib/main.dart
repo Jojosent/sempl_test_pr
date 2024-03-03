@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sempl_test_pr/screens/register_screen.dart';
+import 'package:sempl_test_pr/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
