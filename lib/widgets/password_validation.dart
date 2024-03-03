@@ -43,26 +43,26 @@ class _PasswordValidationWidgetState extends State<PasswordValidationWidget> {
       children: [
         TextField(
           controller: _passwordController,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             hintText: 'Пароль',
             hintStyle: TextStyle(
               color: Color.fromRGBO(206, 206, 206, 1),
               fontWeight: FontWeight.w400,
               fontSize: 15,
             ),
-            border: const UnderlineInputBorder(
+            border: UnderlineInputBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(8),
               ),
             ),
-            enabledBorder: const OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(50.0)),
               borderSide: BorderSide(
                 color: Color.fromRGBO(206, 206, 206, 1),
                 width: 1,
               ),
             ),
-            focusedBorder: const OutlineInputBorder(
+            focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(50.0)),
               borderSide: BorderSide(
                   color: Color.fromRGBO(153, 191, 212, 1), width: 1.0),
@@ -72,7 +72,7 @@ class _PasswordValidationWidgetState extends State<PasswordValidationWidget> {
           ),
           obscureText: true,
         ),
-        SizedBox(height: 6),
+        const SizedBox(height: 6),
         _buildValidationText(
             '✓ Заглавные латинские буквы: от A до Z', hasUppercase),
         _buildValidationText(
@@ -89,7 +89,7 @@ class _PasswordValidationWidgetState extends State<PasswordValidationWidget> {
       children: [
         Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             Text(

@@ -13,7 +13,7 @@ class PersonInfo extends StatefulWidget {
 }
 
 class _PersonInfoState extends State<PersonInfo> {
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   void dispose() {
     _passwordController.dispose();
@@ -34,75 +34,75 @@ class _PersonInfoState extends State<PersonInfo> {
             children: [
               Text(
                 'персональная информация'.toUpperCase(),
-                style: TextStyle(
+                style: const TextStyle(
                   fontFamily: 'DrukCyr',
                   fontSize: 30,
                   fontWeight: FontWeight.w400,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              AppTextField(
+              const AppTextField(
                 hint: 'Имя',
                 textType: TextInputType.text,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 4,
               ),
-              AppTextField(
+              const AppTextField(
                 hint: 'Фамилия',
                 textType: TextInputType.text,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 4,
               ),
-              CustomGenderDropDown(
+              const CustomGenderDropDown(
                 hint: 'Пол',
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
-              AppTextField(
+              const AppTextField(
                 hint: 'Дата рождения',
                 textType: TextInputType.datetime,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
-              AppTextField(
+              const AppTextField(
                 hint: 'Имя в приложении',
                 textType: TextInputType.name,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
-              AppTextField(
+              const AppTextField(
                 hint: 'Почта',
                 textType: TextInputType.emailAddress,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               PasswordValidationWidget(),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
-              AppTextField(
+              const AppTextField(
                 hint: 'Повторите пароль',
                 textType: TextInputType.emailAddress,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Коммуникация:',
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   Row(
@@ -116,7 +116,7 @@ class _PersonInfoState extends State<PersonInfo> {
                           shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(2.0))),
-                          activeColor: Color.fromRGBO(153, 191, 212, 1),
+                          activeColor: const Color.fromRGBO(153, 191, 212, 1),
                           isError: true,
                           value: isChecked,
                           onChanged: (bool? value) {
@@ -126,10 +126,10 @@ class _PersonInfoState extends State<PersonInfo> {
                           },
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
-                      Text(
+                      const Text(
                         'Я хочу получать рекламные электронные\nписьма и информацию о приложениях',
                         style: TextStyle(
                             fontWeight: FontWeight.w500, fontSize: 15),
@@ -138,17 +138,17 @@ class _PersonInfoState extends State<PersonInfo> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 18,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Конфиденциальность:',
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 12,
                   ),
                   Row(
@@ -162,7 +162,7 @@ class _PersonInfoState extends State<PersonInfo> {
                           shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(2.0))),
-                          activeColor: Color.fromRGBO(153, 191, 212, 1),
+                          activeColor: const Color.fromRGBO(153, 191, 212, 1),
                           isError: true,
                           value: isChecked2,
                           onChanged: (bool? value) {
@@ -172,7 +172,7 @@ class _PersonInfoState extends State<PersonInfo> {
                           },
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
                       RichText(
@@ -200,7 +200,7 @@ class _PersonInfoState extends State<PersonInfo> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               SizedBox(
@@ -213,31 +213,33 @@ class _PersonInfoState extends State<PersonInfo> {
                                 widget.pageController.page!.toInt() + 1;
                             widget.pageController.animateToPage(
                               nextPage,
-                              duration: Duration(milliseconds: 400),
+                              duration: const Duration(milliseconds: 400),
                               curve: Curves.easeInOut,
                             );
                           }
                         }
                       : null,
-                  child: Text(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        (isChecked ?? false) && (isChecked2 ?? false)
+                            ? const Color.fromRGBO(153, 191, 212, 1)
+                            : Colors.grey,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 36, vertical: 18),
+                  ),
+                  child: const Text(
                     'ШАГ 2 →',
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.w400),
                   ),
-                  style: ElevatedButton.styleFrom(
-                    primary: (isChecked ?? false) && (isChecked2 ?? false)
-                        ? Color.fromRGBO(153, 191, 212, 1)
-                        : Colors.grey,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    padding: EdgeInsets.symmetric(horizontal: 36, vertical: 18),
-                  ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
             ],

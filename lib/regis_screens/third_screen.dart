@@ -12,8 +12,8 @@ class ThirdScreen extends StatefulWidget {
 class _ThirdScreenState extends State<ThirdScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: const Color.fromRGBO(248, 248, 248, 1),
+    return const Scaffold(
+        backgroundColor: Color.fromRGBO(248, 248, 248, 1),
         body: Center(
           child: Text('Jomart'),
         ));

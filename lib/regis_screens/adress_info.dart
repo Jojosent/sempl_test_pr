@@ -107,27 +107,27 @@ class _AdressInfoScreenState extends State<AdressInfoScreen> {
               children: [
                 Text(
                   'адрес доставки'.toUpperCase(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontFamily: 'DrukCyr',
                     fontSize: 30,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
-                AppTextField(
+                const AppTextField(
                   hint: 'Город',
                   textType: TextInputType.text,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
-                AppTextField(
+                const AppTextField(
                   hint: 'Улица',
                   textType: TextInputType.streetAddress,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
                 Row(
@@ -135,21 +135,21 @@ class _AdressInfoScreenState extends State<AdressInfoScreen> {
                   children: [
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width / 2.3,
-                      child: AppTextField(
+                      child: const AppTextField(
                         hint: 'Номер дома',
                         textType: TextInputType.streetAddress,
                       ),
                     ),
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width / 2.3,
-                      child: AppTextField(
+                      child: const AppTextField(
                         hint: 'Номер квартиры',
                         textType: TextInputType.streetAddress,
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
                 Row(
@@ -157,14 +157,14 @@ class _AdressInfoScreenState extends State<AdressInfoScreen> {
                   children: [
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width / 2.3,
-                      child: AppTextField(
+                      child: const AppTextField(
                         hint: 'Подъезд',
                         textType: TextInputType.streetAddress,
                       ),
                     ),
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width / 2.3,
-                      child: AppTextField(
+                      child: const AppTextField(
                         hint: 'Почтовый индекс',
                         textType: TextInputType.streetAddress,
                       ),
@@ -172,8 +172,8 @@ class _AdressInfoScreenState extends State<AdressInfoScreen> {
                   ],
                 ),
                 if (_showError = false)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 8.0),
                     child: Text(
                       '*Поля обязательные для заполнения',
                       style: TextStyle(
@@ -182,17 +182,17 @@ class _AdressInfoScreenState extends State<AdressInfoScreen> {
                       ),
                     ),
                   ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
-                Text(
+                const Text(
                   'После регистрации адрес можно изменить в личном кабинете',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 4,
                 ),
               ],
@@ -212,29 +212,29 @@ class _AdressInfoScreenState extends State<AdressInfoScreen> {
                           !postalError) {
                         // Proceed to the next page
                         widget.pageController.nextPage(
-                          duration: Duration(milliseconds: 400),
+                          duration: const Duration(milliseconds: 400),
                           curve: Curves.easeInOut,
                         );
                       }
                     },
-                    child: Text(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromRGBO(153, 191, 212, 1),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 36, vertical: 18),
+                    ),
+                    child: const Text(
                       'ШАГ 3 →',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.w400),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(153, 191, 212, 1),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 36, vertical: 18),
-                    ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
               ],

@@ -25,8 +25,8 @@ class AppTextField extends StatelessWidget {
       onChanged: onChange,
       obscureText: obscureText,
       decoration: InputDecoration(
-        hintText: '$hint',
-        hintStyle: TextStyle(
+        hintText: hint,
+        hintStyle: const TextStyle(
           color: Color.fromRGBO(206, 206, 206, 1),
           fontWeight: FontWeight.w400,
           fontSize: 15,

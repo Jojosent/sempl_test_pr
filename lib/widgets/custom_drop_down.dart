@@ -10,10 +10,10 @@ class CustomGenderDropDown extends StatelessWidget {
   Widget build(BuildContext context) {
     String? selectedGender;
     return DropdownButtonFormField<String>(
-      icon: SvgPicture.asset('svg/arrow_down.svg'),
+      icon: SvgPicture.asset('assets/svg/arrow_down.svg'),
       decoration: InputDecoration(
-        hintText: '$hint',
-        hintStyle: TextStyle(
+        hintText: hint,
+        hintStyle: const TextStyle(
           color: Color.fromRGBO(206, 206, 206, 1),
           fontWeight: FontWeight.w400,
           fontSize: 15,
